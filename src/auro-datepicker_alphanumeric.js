@@ -5,6 +5,7 @@
 
 // If using litElement base class
 import { LitElement, html } from "lit-element";
+import { DateTime } from 'luxon';
 
 // If using auroElement base class
 // See instructions for importing auroElement base class https://git.io/JULq4
@@ -38,7 +39,14 @@ class AuroDatepicker_alphanumeric extends LitElement {
       // ...super.properties,
 
       // this property is DEMO ONLY! Please delete.
-      cssClass:   { type: String }
+      cssClass:   { type: String },
+
+      departDate_month: {type: Number},
+      departDate_day: {type: Number},
+      departDate_year: {type: Number},
+      returnDate_month: {type: Number},
+      returnDate_day: {type: Number},
+      returnDate_year: {type: Number},
     };
   }
 
@@ -55,10 +63,9 @@ class AuroDatepicker_alphanumeric extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-
-      <!-- this is demo code, DO NOT USE IN YOUR ELEMENT -->
-      <div class=${this.cssClass} tabindex="0">
-        <slot></slot>
+      <div>
+        <input type="text" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
+        <input type="text" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat('LL/dd/yyyy')  }"/>
       </div>
     `;
   }
