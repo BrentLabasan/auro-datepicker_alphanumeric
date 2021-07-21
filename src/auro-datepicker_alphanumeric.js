@@ -41,12 +41,13 @@ class AuroDatepicker_alphanumeric extends LitElement {
       // this property is DEMO ONLY! Please delete.
       cssClass:   { type: String },
 
+      departDate_year: {type: Number},
       departDate_month: {type: Number},
       departDate_day: {type: Number},
-      departDate_year: {type: Number},
+
+      returnDate_year: {type: Number},
       returnDate_month: {type: Number},
       returnDate_day: {type: Number},
-      returnDate_year: {type: Number},
     };
   }
 
@@ -57,11 +58,47 @@ class AuroDatepicker_alphanumeric extends LitElement {
     ];
   }
 
+  firstUpdated() {
+    // debugger;
+
+    const dt = DateTime.now();
+
+    // if auro-dropdown's departDate attributes have all been set
+    if (this.parentElement.getAttribute('departDate_year') && this.parentElement.getAttribute('departDate_month') && this.parentElement.getAttribute('departDate_day')) {
+      this.departDate_year = this.parentElement.getAttribute('departDate_year');
+      this.departDate_month = this.parentElement.getAttribute('departDate_month');
+      this.departDate_day = this.parentElement.getAttribute('departDate_day');
+
+      const dt2 = DateTime.fromObject({year: this.departDate_year, month: this.departDate_month, day: this.departDate_day}).plus({month: 1});
+
+      this.returnDate_year = dt2.year;
+      this.returnDate_month = dt2.month;
+      this.returnDate_day = dt2.day;
+    } else {
+
+      this.departDate_year = dt.year;
+      this.departDate_month = dt.month;
+      this.departDate_day = dt.day;
+
+      const dt2 = DateTime.fromISO(dt).plus({month: 1});
+
+      this.returnDate_year = dt2.year;
+      this.returnDate_month = dt2.month;
+      this.returnDate_day = dt2.day;
+    }
+
+
+  }
+
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+    // debugger;
+
+    // DateTime.fromObject({ year: null, month: null, day: null }) will return the DateTime right now
+
     return html`
       <div>
         <input type="text" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
