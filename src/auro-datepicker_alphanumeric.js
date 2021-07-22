@@ -90,6 +90,14 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
   }
 
+  handleClick() {
+    console.log("datepicker_alphanumeric handleClick()");
+    this.dispatchEvent(new CustomEvent('toggleShow', {
+      bubbles: true, // TOSTUDY
+      composed: true // TOSTUDY
+    }));
+  }
+
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
@@ -101,8 +109,8 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
     return html`
       <div>
-        <input type="text" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
-        <input type="text" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat('LL/dd/yyyy')  }"/>
+        <input type="text" @click="${this.handleClick}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
+        <input type="text" @click="${this.handleClick}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat('LL/dd/yyyy')  }"/>
       </div>
     `;
   }
