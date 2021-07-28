@@ -152,13 +152,13 @@ class AuroDatepicker_alphanumeric extends LitElement {
           
 
           if ( currentRangeEnd && this.comesAfter(pendingRangeStart, currentRangeEnd) ) { // pending departure date selection comes after the current arival date
-            alert("pending start date CAN NOT be after current end date");
+            console.error("pending start date CAN NOT be after current end date");
   
             return;
           }
   
           // debugger;
-          alert("incoming depart date is valid!");
+          console.log("incoming depart date is valid!");
 
           this.departDate_month = inputDepartValue_array[0];
           this.departDate_day = inputDepartValue_array[1];
@@ -178,7 +178,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
           }));
 
         } else {
-          alert("depart date IS NOT valid");
+          console.error("depart date IS NOT valid");
 
         }
 
@@ -214,13 +214,13 @@ class AuroDatepicker_alphanumeric extends LitElement {
           
 
           if ( currentRangeBegin && this.comesBefore(pendingRangeEnd, currentRangeBegin) ) { // pending departure date selection comes after the current arival date
-            alert("pending end date CAN NOT be before current begin date");
+            console.error("pending end date CAN NOT be before current begin date");
   
             return;
           }
   
           // debugger;
-          alert("incoming return date is valid!"); // bookmark
+          console.log("incoming return date is valid!"); // bookmark
 
           this.returnDate_month = inputReturnValue_array[0];
           this.returnDate_day = inputReturnValue_array[1];
@@ -240,7 +240,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
           }));
 
         } else {
-          alert("return date IS NOT valid");
+          console.error("return date IS NOT valid");
 
         }
 
