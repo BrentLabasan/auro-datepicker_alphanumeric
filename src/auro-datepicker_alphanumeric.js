@@ -189,7 +189,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
           const inputDepartValue = this.shadowRoot.querySelector('#inputDepart').value;
           const inputDepartValue_array = inputDepartValue.split('/');
 
-          const currentRangeBegin = DateTime.fromObject({month: inputReturnValue_array[0], day: inputReturnValue_array[1], year: inputReturnValue_array[2]});
+          const currentRangeBegin = DateTime.fromObject({month: inputDepartValue_array[0], day: inputDepartValue_array[1], year: inputDepartValue_array[2]});
           
           // debugger;
           
@@ -201,7 +201,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
           }
   
           // debugger;
-          alert("incoming depart date is valid!"); // bookmark
+          alert("incoming return date is valid!"); // bookmark
 
           this.returnDate_month = inputReturnValue_array[0];
           this.returnDate_day = inputReturnValue_array[1];
