@@ -14,9 +14,21 @@
 // @import './node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 
 // container styles - defines the look of the outer custom component
-// :host {
-//   ...
-// }
+:host {
+
+  display: inline-block;
+  border-radius: 4px;
+
+
+  // debug
+  border: 1px solid #DBDBDB;
+  background: #FFFFFF;
+  box-shadow: 0px 0.1px 5px rgba(0, 0, 0, 0.12), 0px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+
+
+}
 
 
 // Selector is for initial setup only
@@ -41,4 +53,18 @@
     background-color: var(--auro-color-border-error-on-light);
     color: var(--auro-color-base-white);
   }
+}
+
+input {
+  border: 0;
+
+  font-family: AS Circular;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+
+  
+  color: #222222;
+
 }

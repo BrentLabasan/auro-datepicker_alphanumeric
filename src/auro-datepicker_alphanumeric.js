@@ -14,7 +14,7 @@ import { DateTime } from 'luxon';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
-import styleCss from "./style-css.js";
+import styleCss from './auro-datepicker_alphanumeric-css.js';
 import styleCssFixed from './style-fixed-css.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -268,10 +268,17 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
     // DateTime.fromObject({ year: null, month: null, day: null }) will return the DateTime right now
 
+    const dateFormat = 'ccc, LLL dd, yyyy';
+
     return html`
       <div>
-        <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keydown="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
-        <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keydown="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat('LL/dd/yyyy')  }"/>
+        <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keydown="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
+        
+        <svg width="5" height="30">
+          <line style="stroke: #555555; stroke-width:1" x1="0" y1="0" x2="0" y2="30"></line>
+        </svg>
+
+        <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keydown="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat(dateFormat)  }"/>
       </div>
     `;
   }
