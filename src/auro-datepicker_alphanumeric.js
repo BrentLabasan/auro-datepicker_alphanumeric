@@ -90,8 +90,27 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
   }
 
-  handleClick() {
-    console.log("datepicker_alphanumeric handleClick()");
+  handleClickDepart() {
+    console.log("datepicker_alphanumeric handleClickDepart()");
+
+    // debugger;
+
+    this.parentElement.querySelector('auro-datepicker_calendar').setAttribute('isSelectionDepartDate', '');
+
+    this.dispatchEvent(new CustomEvent('toggleShow', {
+      bubbles: true, // TOSTUDY
+      composed: true // TOSTUDY
+    }));
+  }
+
+  handleClickReturn() {
+    console.log("datepicker_alphanumeric handleClickReturn()");
+
+    // debugger;
+
+    this.parentElement.querySelector('auro-datepicker_calendar').removeAttribute('isSelectionDepartDate');
+
+
     this.dispatchEvent(new CustomEvent('toggleShow', {
       bubbles: true, // TOSTUDY
       composed: true // TOSTUDY
@@ -251,8 +270,8 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
     return html`
       <div>
-        <input id="inputDepart" type="text" @click="${this.handleClick}" @keydown="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
-        <input id="inputReturn" type="text" @click="${this.handleClick}" @keydown="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat('LL/dd/yyyy')  }"/>
+        <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keydown="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat('LL/dd/yyyy')  }"/>
+        <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keydown="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat('LL/dd/yyyy')  }"/>
       </div>
     `;
   }
