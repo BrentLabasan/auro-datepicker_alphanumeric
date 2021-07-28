@@ -57,6 +57,9 @@
 
 input {
   border: 0;
+  padding: 10px;
+
+  width: 160px; // 137px
 
   font-family: AS Circular;
   font-style: normal;
@@ -67,4 +70,11 @@ input {
   
   color: #222222;
 
+
+  // debug
+  // border: 1px solid gtreen;
+
+  :focus {
+    border: 1px solid gtreen;
+  }
 }

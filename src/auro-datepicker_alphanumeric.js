@@ -274,8 +274,8 @@ class AuroDatepicker_alphanumeric extends LitElement {
       <div>
         <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keydown="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
         
-        <svg width="5" height="30">
-          <line style="stroke: #555555; stroke-width:1" x1="0" y1="0" x2="0" y2="30"></line>
+        <svg width="1" height="32">
+          <line style="stroke: #DBDBDB; stroke-width:1" x1="0" y1="0" x2="0" y2="32"></line>
         </svg>
 
         <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keydown="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat(dateFormat)  }"/>
