@@ -310,7 +310,6 @@ class AuroDatepicker_alphanumeric extends LitElement {
     const dateFormat = 'ccc, LLL dd, yyyy';
 // debugger;
     return html`
-      <div>
         ${this.calendar} 
 
         <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keyup="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
@@ -320,7 +319,6 @@ class AuroDatepicker_alphanumeric extends LitElement {
         </svg>
 
         <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keyup="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat(dateFormat)  }"/>
-      </div>
     `;
   }
 }
