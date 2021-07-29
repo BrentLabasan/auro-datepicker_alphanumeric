@@ -41,9 +41,9 @@ class AuroDatepicker_alphanumeric extends LitElement {
       // this property is DEMO ONLY! Please delete.
       cssClass:   { type: String },
 
-      departDate_year: {type: Number},
-      departDate_month: {type: Number},
-      departDate_day: {type: Number},
+      departDate_year: {type: Number, reflect: true},
+      departDate_month: {type: Number, reflect: true},
+      departDate_day: {type: Number, reflect: true},
 
       returnDate_year: {type: Number},
       returnDate_month: {type: Number},
@@ -126,6 +126,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
     return DateTime.fromISO(a) > DateTime.fromISO(b);
   }
 
+  // https://stackoverflow.com/a/66791326/708355
   fromShortMonthToNumber(str) {
     return new Date(`${str} 01 2000`).toLocaleDateString(`en`, {month:`2-digit`})
   }
@@ -290,7 +291,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
     // DateTime.fromObject({ year: null, month: null, day: null }) will return the DateTime right now
 
     const dateFormat = 'ccc, LLL dd, yyyy';
-debugger;
+// debugger;
     return html`
       <div>
         <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keyup="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
