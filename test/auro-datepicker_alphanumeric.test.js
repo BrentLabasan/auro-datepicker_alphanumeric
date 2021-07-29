@@ -37,7 +37,7 @@ describe('auro-datepicker_alphanumeric', () => {
     expect(parseInt(target.getAttribute('departDate_day'))).to.equal(15);
   });
 
-  it('', async () => {
+  it('input depart', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
         <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
@@ -51,9 +51,11 @@ describe('auro-datepicker_alphanumeric', () => {
     const calendar = el.querySelector('auro-datepicker_calendar');
     expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(true);
 
+
+    // TODO parent element received toggleShow
   });
 
-  it('', async () => {
+  it('input return', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
         <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
@@ -67,6 +69,26 @@ describe('auro-datepicker_alphanumeric', () => {
     const calendar = el.querySelector('auro-datepicker_calendar');
     expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(false);
 
+  });
+
+  // WTF handleKeyPressDepart() doesn't fire ughhhhhhhhhhhhh; it works here https://stackoverflow.com/a/44190874/708355
+  it.only('handleKeyPressDepart', async () => {
+    const el = await fixture(html`
+      <div departDate_year="2021" departDate_month="10" departDate_day="15">
+        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker_calendar cssclass="testClass"></auro-datepicker_calendar>
+      </div>
+    `);
+
+    const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputDepart');
+    console.log("input", input);
+    // debugger;
+    input.focus();
+    input.click();
+    input.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'a' }));
+
+    // const calendar = el.querySelector('auro-datepicker_calendar');
+    // expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(false);
   });
 
   // it('', async () => {

@@ -17,6 +17,9 @@ import "focus-visible/dist/focus-visible.min.js";
 import styleCss from './auro-datepicker_alphanumeric-css.js';
 import styleCssFixed from './style-fixed-css.js';
 
+import calendar from '@alaskaairux/icons/dist/icons/interface/calendar_es6.js';
+
+
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
 * auro-datepicker_alphanumeric provides users a way to ... (it would be great if you fill this out)
@@ -27,9 +30,11 @@ import styleCssFixed from './style-fixed-css.js';
 
 // build the component class
 class AuroDatepicker_alphanumeric extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+
+    this.calendar = this.getIconAsHtml(calendar);
+  }
 
   // This function is to define props used within the scope of this component
   // Be sure to review  https://lit-element.polymer-project.org/guide/properties#reflected-attributes
@@ -90,6 +95,17 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
   }
 
+    /**
+   * @private Parse imported SVG object data to string for HTML use
+   * @param {string} icon HTML string for requested icon.
+   * @returns {object} Appended HTML for SVG.
+   */
+    getIconAsHtml(icon) {
+      const dom = new DOMParser().parseFromString(icon.svg, 'text/html');
+
+      return dom.body.firstChild;
+    }
+
   handleClickDepart() {
     console.log("datepicker_alphanumeric handleClickDepart()");
 
@@ -132,6 +148,8 @@ class AuroDatepicker_alphanumeric extends LitElement {
   }
 
   handleKeyPressDepart(evt) {
+    console.log("handleKeyPressDepart()");
+
     const key = evt.key.toLowerCase();
 
     switch(key) {
@@ -207,7 +225,6 @@ class AuroDatepicker_alphanumeric extends LitElement {
     const key = evt.key.toLowerCase();
 
     switch(key) {
-      case 'enter':
       case 'enter':
         console.log("handleKeyPressDepart() key: Enter");
         // debugger;
@@ -294,6 +311,8 @@ class AuroDatepicker_alphanumeric extends LitElement {
 // debugger;
     return html`
       <div>
+        ${this.calendar} 
+
         <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keyup="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
         
         <svg width="1" height="32">

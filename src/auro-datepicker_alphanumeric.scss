@@ -17,6 +17,7 @@
 :host {
 
   display: inline-block;
+  height: 52px;
   border-radius: 4px;
 
 
@@ -24,7 +25,7 @@
   border: 1px solid #DBDBDB;
   background: #FFFFFF;
   box-shadow: 0px 0.1px 5px rgba(0, 0, 0, 0.12), 0px 5px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  // padding: 10px;
 
 
 
@@ -41,23 +42,24 @@
 }
 
 // Selector for native :focus-visible support
+// BRENT: This is what happens when you click on an input and the background turned red
 :focus-visible {
-  background-color: var(--auro-color-border-error-on-light);
-  color: var(--auro-color-base-white);
+  // background-color: var(--auro-color-border-error-on-light);
+  // color: var(--auro-color-base-white);
 }
 
 // Selector for focus-visible polyfill
 :host(.focus-visible) {
   // requires reference to custom element selector in this example
   .testClass {
-    background-color: var(--auro-color-border-error-on-light);
+    // background-color: var(--auro-color-border-error-on-light);
     color: var(--auro-color-base-white);
   }
 }
 
 input {
   border: 0;
-  padding: 10px;
+  // padding: 10px;
 
   width: 160px; // 137px
 
