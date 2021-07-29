@@ -37,6 +37,52 @@ describe('auro-datepicker_alphanumeric', () => {
     expect(parseInt(target.getAttribute('departDate_day'))).to.equal(15);
   });
 
+  it('', async () => {
+    const el = await fixture(html`
+      <div departDate_year="2021" departDate_month="10" departDate_day="15">
+        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker_calendar cssclass="testClass"></auro-datepicker_calendar>
+      </div>
+    `);
+
+    const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputDepart');
+    input.click();
+
+    const calendar = el.querySelector('auro-datepicker_calendar');
+    expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(true);
+
+  });
+
+  it('', async () => {
+    const el = await fixture(html`
+      <div departDate_year="2021" departDate_month="10" departDate_day="15">
+        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker_calendar cssclass="testClass"></auro-datepicker_calendar>
+      </div>
+    `);
+
+    const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputReturn');
+    input.click();
+
+    const calendar = el.querySelector('auro-datepicker_calendar');
+    expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(false);
+
+  });
+
+  // it('', async () => {
+
+  // });
+  // it('', async () => {
+
+  // });
+  // it('', async () => {
+
+  // });
+  // it('', async () => {
+
+  // });
+
+
 
   // it('auro-datepicker_alphanumeric is accessible', async () => {
   //   const el = await fixture(html`
