@@ -76,9 +76,18 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
       const dt2 = DateTime.fromObject({year: this.departDate_year, month: this.departDate_month, day: this.departDate_day}).plus({month: 1});
 
-      this.returnDate_year = dt2.year;
-      this.returnDate_month = dt2.month;
-      this.returnDate_day = dt2.day;
+      // BOOKMARK determine if return dates have been set
+      if (this.parentElement.getAttribute('returnDate_year') && this.parentElement.getAttribute('returnDate_month') && this.parentElement.getAttribute('returnDate_day')) {
+        this.returnDate_year = this.parentElement.getAttribute('returnDate_year');
+        this.returnDate_month = this.parentElement.getAttribute('returnDate_month');
+        this.returnDate_day = this.parentElement.getAttribute('returnDate_day');
+      } else {
+        this.returnDate_year = dt2.year;
+        this.returnDate_month = dt2.month;
+        this.returnDate_day = dt2.day;
+      }
+
+
     } else {
 
       this.departDate_year = dt.year;
@@ -314,7 +323,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
         <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keyup="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
         
-        <svg width="1" height="32">
+        <svg id="verticalLine" width="1" height="32">
           <line style="stroke: #DBDBDB; stroke-width:1" x1="0" y1="0" x2="0" y2="32"></line>
         </svg>
 
