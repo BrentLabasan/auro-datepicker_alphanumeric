@@ -76,7 +76,6 @@ class AuroDatepicker_alphanumeric extends LitElement {
 
       const dt2 = DateTime.fromObject({year: this.departDate_year, month: this.departDate_month, day: this.departDate_day}).plus({month: 1});
 
-      // BOOKMARK determine if return dates have been set
       if (this.parentElement.getAttribute('returnDate_year') && this.parentElement.getAttribute('returnDate_month') && this.parentElement.getAttribute('returnDate_day')) {
         this.returnDate_year = this.parentElement.getAttribute('returnDate_year');
         this.returnDate_month = this.parentElement.getAttribute('returnDate_month');
@@ -299,7 +298,7 @@ class AuroDatepicker_alphanumeric extends LitElement {
   isInputtedDateValid(array) {
     
     const dt = DateTime.now();
-
+    console.log('array', array)
     if (array[2].length > 4 || parseInt(array[2]) < dt.year) {
       return false;
     }
@@ -321,13 +320,13 @@ class AuroDatepicker_alphanumeric extends LitElement {
     return html`
         ${this.calendar} 
 
-        <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keyup="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
+        <input id="inputDepart" type="text" @click="${this.handleClickDepart}" @keydown="${this.handleKeyPressDepart}" value="${ DateTime.fromObject({ year: this.departDate_year, month: this.departDate_month, day: this.departDate_day }).toFormat(dateFormat)  }"/>
         
         <svg id="verticalLine" width="1" height="32">
           <line style="stroke: #DBDBDB; stroke-width:1" x1="0" y1="0" x2="0" y2="32"></line>
         </svg>
 
-        <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keyup="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat(dateFormat)  }"/>
+        <input id="inputReturn" type="text" @click="${this.handleClickReturn}" @keydown="${this.handleKeyPressReturn}" value="${ DateTime.fromObject({ year: this.returnDate_year, month: this.returnDate_month, day: this.returnDate_day }).toFormat(dateFormat)  }"/>
     `;
   }
 }

@@ -71,7 +71,7 @@ describe('auro-datepicker_alphanumeric', () => {
 
   });
 
-  // WTF handleKeyPressDepart() doesn't fire ughhhhhhhhhhhhh; it works here https://stackoverflow.com/a/44190874/708355
+  // TODO check that this test works by bringing in datepicker-calendar and auro-dropdown and checking that datepicker-calendar syncs its date with this
   it.only('handleKeyPressDepart', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
@@ -81,11 +81,19 @@ describe('auro-datepicker_alphanumeric', () => {
     `);
 
     const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputDepart');
-    console.log("input", input);
-    // debugger;
-    input.focus();
-    input.click();
-    input.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'a' }));
+
+    // attempted to type characters 1 by 1 and then press Enter, but the text in the input doesn't change
+    // input.dispatchEvent(new KeyboardEvent('keydown', { 'key': '1' }));
+    // console.log("input", input);
+    // input.dispatchEvent(new KeyboardEvent('keydown', { 'key': '/' }));
+    // console.log("input", input);
+    // input.dispatchEvent(new KeyboardEvent('keydown', { 'key': '1' }));
+    // console.log("input", input);
+    // input.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'Enter' }));
+
+    // input.click();
+    
+    // setTimeout(function(){ console.log("3 seconds have passed"); }, 3000);
 
     // const calendar = el.querySelector('auro-datepicker_calendar');
     // expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(false);
