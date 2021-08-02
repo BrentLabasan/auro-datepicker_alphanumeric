@@ -72,6 +72,7 @@ describe('auro-datepicker_alphanumeric', () => {
   });
 
   // TODO check that this test works by bringing in datepicker-calendar and auro-dropdown and checking that datepicker-calendar syncs its date with this
+  /*
   it.only('handleKeyPressDepart', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
@@ -98,6 +99,7 @@ describe('auro-datepicker_alphanumeric', () => {
     // const calendar = el.querySelector('auro-datepicker_calendar');
     // expect(calendar.hasAttribute('isSelectionDepartDate')).to.equal(false);
   });
+  */
 
   // it('', async () => {
 

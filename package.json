@@ -168,5 +168,8 @@
     "test": "wtr --coverage",
     "test:watch": "wtr --watch",
     "prepare": "husky install"
+  },
+  "rules": {
+    "no-descending-specificity": null
   }
 }
