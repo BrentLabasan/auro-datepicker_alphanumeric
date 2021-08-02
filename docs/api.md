@@ -1,6 +1,6 @@
-# auro-datepicker_alphanumeric
+# auro-datepicker-alphanumeric
 
-auro-datepicker_alphanumeric provides users a way to ... (it would be great if you fill this out)
+auro-datepicker-alphanumeric provides users a way to ... (it would be great if you fill this out)
 
 ## Attributes
 

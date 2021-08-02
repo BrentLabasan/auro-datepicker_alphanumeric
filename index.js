@@ -1,1 +1,1 @@
-export * from './dist/auro-datepicker_alphanumeric';
+export * from './dist/auro-datepicker-alphanumeric';

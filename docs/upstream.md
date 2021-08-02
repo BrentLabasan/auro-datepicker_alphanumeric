@@ -17,14 +17,14 @@ $ git remote -v
 This should return
 
 ```bash
-origin  https://github.com/[yourUserName]/auro-datepicker_alphanumeric.git (fetch)
-origin  https://github.com/[yourUserName]/auro-datepicker_alphanumeric.git (push)
+origin  https://github.com/[yourUserName]/auro-datepicker-alphanumeric.git (fetch)
+origin  https://github.com/[yourUserName]/auro-datepicker-alphanumeric.git (push)
 ```
 
 To add the upstream repo to your local forked project
 
 ```bash
-$ git remote add upstream https://github.com/AlaskaAirlines/auro-datepicker_alphanumeric.git
+$ git remote add upstream https://github.com/AlaskaAirlines/auro-datepicker-alphanumeric.git
 ```
 
 To validate this worked, run the following again
@@ -34,10 +34,10 @@ $ git remote -v
 ```
 
 ```
-origin  https://github.com/[yourUserName]/auro-datepicker_alphanumeric.git (fetch)
-origin  https://github.com/[yourUserName]/auro-datepicker_alphanumeric.git (push)
-upstream        https://github.com/AlaskaAirlines/auro-datepicker_alphanumeric.git (fetch)
-upstream        https://github.com/AlaskaAirlines/auro-datepicker_alphanumeric.git (push)
+origin  https://github.com/[yourUserName]/auro-datepicker-alphanumeric.git (fetch)
+origin  https://github.com/[yourUserName]/auro-datepicker-alphanumeric.git (push)
+upstream        https://github.com/AlaskaAirlines/auro-datepicker-alphanumeric.git (fetch)
+upstream        https://github.com/AlaskaAirlines/auro-datepicker-alphanumeric.git (push)
 ```
 
 #### Sync upstream

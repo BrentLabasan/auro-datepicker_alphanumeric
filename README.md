@@ -1,6 +1,6 @@
 # auroLabs - Datepicker_alphanumeric
 
-`<auro-datepicker_alphanumeric>` is an experimental [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) only available as a PRE RELEASE. Users of this element understand the risks of using a pre-released version of this element.
+`<auro-datepicker-alphanumeric>` is an experimental [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) only available as a PRE RELEASE. Users of this element understand the risks of using a pre-released version of this element.
 
 ## UI development browser support
 
@@ -8,12 +8,12 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-datepicker_alphanumeric/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-datepicker_alphanumeric/actions?query=workflow%3A%22test+and+publish%22)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-datepicker_alphanumeric?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-datepicker_alphanumeric)
-[![License](https://img.shields.io/npm/l/@aurolabs/auro-datepicker_alphanumeric?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-datepicker-alphanumeric/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-datepicker-alphanumeric/actions?query=workflow%3A%22test+and+publish%22)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-datepicker-alphanumeric?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-datepicker-alphanumeric)
+[![License](https://img.shields.io/npm/l/@aurolabs/auro-datepicker-alphanumeric?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurolabs/auro-datepicker_alphanumeric
+$ npm i @aurolabs/auro-datepicker-alphanumeric
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -30,21 +30,21 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 
 ### Define dependency in project component
 
-Defining the component dependency within each component that is using the `<auro-datepicker_alphanumeric>` component.
+Defining the component dependency within each component that is using the `<auro-datepicker-alphanumeric>` component.
 
 ```javascript
-import "@aurolabs/auro-datepicker_alphanumeric";
+import "@aurolabs/auro-datepicker-alphanumeric";
 ```
 
 **Reference component in HTML**
 
 ```html
-<auro-datepicker_alphanumeric>Hello World</auro-datepicker_alphanumeric>
+<auro-datepicker-alphanumeric>Hello World</auro-datepicker-alphanumeric>
 ```
 
 ## Install bundled assets from CDN
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-datepicker_alphanumeric__bundled.js` for modern browsers and `auro-datepicker_alphanumeric__bundled.es5.js` for legacy browsers (including IE11).
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-datepicker-alphanumeric__bundled.js` for modern browsers and `auro-datepicker-alphanumeric__bundled.es5.js` for legacy browsers (including IE11).
 
 Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
 
@@ -56,16 +56,16 @@ Since the legacy bundle includes many polyfills that are not needed by modern br
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@aurolabs/auro-datepicker_alphanumeric@latest/dist/auro-datepicker_alphanumeric__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@aurolabs/auro-datepicker_alphanumeric@latest/dist/auro-datepicker_alphanumeric__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@aurolabs/auro-datepicker-alphanumeric@latest/dist/auro-datepicker-alphanumeric__bundled.js" type="module"></script>
+<script src="https://unpkg.com/@aurolabs/auro-datepicker-alphanumeric@latest/dist/auro-datepicker-alphanumeric__bundled.es5.js" nomodule></script>
 ```
 
 ## API Code Examples
 
-Default auro-datepicker_alphanumeric
+Default auro-datepicker-alphanumeric
 
 ```html
-<auro-datepicker_alphanumeric>Hello World</auro-datepicker_alphanumeric>
+<auro-datepicker-alphanumeric>Hello World</auro-datepicker-alphanumeric>
 ```
 
 ## Development
@@ -94,7 +94,7 @@ The custom element API file is generated in the build and committed back to the 
 
 ### Testing
 
-Automated tests are required for every Auro component. See `.\test\auro-datepicker_alphanumeric.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
+Automated tests are required for every Auro component. See `.\test\auro-datepicker-alphanumeric.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
 ### Bundled assets
 

@@ -1,17 +1,17 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/auro-datepicker_alphanumeric.js';
+import '../src/auro-datepicker-alphanumeric.js';
 
-describe('auro-datepicker_alphanumeric', () => {
+describe('auro-datepicker-alphanumeric', () => {
   it('if auro-datepicker-alphanumeric\'s parent element doesn\'t have a depart date, set ADA\'s depart date to today\'s date', async () => {
     const el = await fixture(html`
       <div>
-        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker-alphanumeric cssclass="testClass"></auro-datepicker-alphanumeric>
       </div>
     `);
 
     const date = new Date();
 
-    const target = el.querySelector('auro-datepicker_alphanumeric');
+    const target = el.querySelector('auro-datepicker-alphanumeric');
 
     console.log("target", target)
 
@@ -23,12 +23,12 @@ describe('auro-datepicker_alphanumeric', () => {
   it('if auro-datepicker-alphanumeric\'s parent element does have a depart date, ADA\'s depart date matches', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
-        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker-alphanumeric cssclass="testClass"></auro-datepicker-alphanumeric>
       </div>
     `);
 
 
-    const target = el.querySelector('auro-datepicker_alphanumeric');
+    const target = el.querySelector('auro-datepicker-alphanumeric');
 
     console.log("target", target)
 
@@ -40,12 +40,12 @@ describe('auro-datepicker_alphanumeric', () => {
   it('input depart', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
-        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker-alphanumeric cssclass="testClass"></auro-datepicker-alphanumeric>
         <auro-datepicker_calendar cssclass="testClass"></auro-datepicker_calendar>
       </div>
     `);
 
-    const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputDepart');
+    const input = el.querySelector('auro-datepicker-alphanumeric').shadowRoot.querySelector('#inputDepart');
     input.click();
 
     const calendar = el.querySelector('auro-datepicker_calendar');
@@ -58,12 +58,12 @@ describe('auro-datepicker_alphanumeric', () => {
   it('input return', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
-        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker-alphanumeric cssclass="testClass"></auro-datepicker-alphanumeric>
         <auro-datepicker_calendar cssclass="testClass"></auro-datepicker_calendar>
       </div>
     `);
 
-    const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputReturn');
+    const input = el.querySelector('auro-datepicker-alphanumeric').shadowRoot.querySelector('#inputReturn');
     input.click();
 
     const calendar = el.querySelector('auro-datepicker_calendar');
@@ -76,12 +76,12 @@ describe('auro-datepicker_alphanumeric', () => {
   it.only('handleKeyPressDepart', async () => {
     const el = await fixture(html`
       <div departDate_year="2021" departDate_month="10" departDate_day="15">
-        <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+        <auro-datepicker-alphanumeric cssclass="testClass"></auro-datepicker-alphanumeric>
         <auro-datepicker_calendar cssclass="testClass"></auro-datepicker_calendar>
       </div>
     `);
 
-    const input = el.querySelector('auro-datepicker_alphanumeric').shadowRoot.querySelector('#inputDepart');
+    const input = el.querySelector('auro-datepicker-alphanumeric').shadowRoot.querySelector('#inputDepart');
 
     // attempted to type characters 1 by 1 and then press Enter, but the text in the input doesn't change
     // input.dispatchEvent(new KeyboardEvent('keydown', { 'key': '1' }));
@@ -116,16 +116,16 @@ describe('auro-datepicker_alphanumeric', () => {
 
 
 
-  // it('auro-datepicker_alphanumeric is accessible', async () => {
+  // it('auro-datepicker-alphanumeric is accessible', async () => {
   //   const el = await fixture(html`
-  //     <auro-datepicker_alphanumeric cssclass="testClass"></auro-datepicker_alphanumeric>
+  //     <auro-datepicker-alphanumeric cssclass="testClass"></auro-datepicker-alphanumeric>
   //   `);
 
   //   await expect(el).to.be.accessible();
   // });
 
-  // it('auro-datepicker_alphanumeric custom element is defined', async () => {
-  //   const el = await !!customElements.get("auro-datepicker_alphanumeric");
+  // it('auro-datepicker-alphanumeric custom element is defined', async () => {
+  //   const el = await !!customElements.get("auro-datepicker-alphanumeric");
 
   //   await expect(el).to.be.true;
   // });

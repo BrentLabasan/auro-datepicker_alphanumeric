@@ -27,7 +27,7 @@ const getSharedPlugins = (isLegacy) => [
 
 const modernConfig = {
   input: {
-    ['auro-datepicker_alphanumeric__bundled']: './src/auro-datepicker_alphanumeric.js',
+    ['auro-datepicker-alphanumeric__bundled']: './src/auro-datepicker-alphanumeric.js',
   },
   output: {
     format: 'esm',
@@ -57,7 +57,7 @@ const auroDatepicker_alphanumericConfig = {
   input: 'src/es5.js',
   output: {
     format: 'iife',
-    file: 'dist/auro-datepicker_alphanumeric__bundled.es5.js'
+    file: 'dist/auro-datepicker-alphanumeric__bundled.es5.js'
   },
   plugins: getSharedPlugins(true)
 };

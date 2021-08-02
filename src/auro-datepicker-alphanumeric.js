@@ -14,7 +14,7 @@ import { DateTime } from 'luxon';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
-import styleCss from './auro-datepicker_alphanumeric-css.js';
+import styleCss from './auro-datepicker-alphanumeric-css.js';
 import styleCssFixed from './style-fixed-css.js';
 
 import calendar from '@alaskaairux/icons/dist/icons/interface/calendar_es6.js';
@@ -22,7 +22,7 @@ import calendar from '@alaskaairux/icons/dist/icons/interface/calendar_es6.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /** .......
- * Auro-datepicker_alphanumeric provides users a way to ... (it would be great if you fill this out)
+ * auro-datepicker-alphanumeric provides users a way to ... (it would be great if you fill this out)
  *
  * @attr {Boolean} fixed - Uses fixed pixel values for element shape
  * @attr {String} cssClass - Applies designated CSS class to demo element - you want to delete me!
@@ -355,6 +355,6 @@ class AuroDatepicker_alphanumeric extends LitElement {
 }
 
 // define the name of the custom component
-if (!customElements.get("auro-datepicker_alphanumeric")) {
-  customElements.define("auro-datepicker_alphanumeric", AuroDatepicker_alphanumeric);
+if (!customElements.get("auro-datepicker-alphanumeric")) {
+  customElements.define("auro-datepicker-alphanumeric", AuroDatepicker_alphanumeric);
 }

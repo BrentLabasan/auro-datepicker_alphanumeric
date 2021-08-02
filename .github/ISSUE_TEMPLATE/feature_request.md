@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: 'auro-datepicker_alphanumeric: [feature summary]'
+title: 'auro-datepicker-alphanumeric: [feature summary]'
 labels: 'Type: Feature, not-reviewed'
 assignees: blackfalcon
 ---
